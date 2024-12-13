@@ -4,6 +4,6 @@
 
 ### docker compose up -d db
 
-### docker exec -it <conteneur-symfony> bash
+### docker exec -it "conteneur-symfony" bash
 
 ### php bon/console doctrine:migrations:migrate
