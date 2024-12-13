@@ -1,0 +1,15 @@
+security:
+  firewalls:
+    main:
+      pattern: ^/
+      form_login:
+        login_path: app_login
+        check_path: app_login
+      logout:
+        path: app_logout
+        target: /
+
+  access_control:
+    - { path: ^/admin, roles: ROLE_ADMIN }
+    - { path: ^/user, roles: ROLE_USER }
+    - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
