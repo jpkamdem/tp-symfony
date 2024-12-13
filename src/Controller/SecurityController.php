@@ -4,14 +4,15 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\User;
 
 class SecurityController extends AbstractController
 {
     #[Route('/api/permissions', name: 'api_get_permissions', methods: ['GET'])]
-    public function getPermissions(UserInterface $user): JsonResponse
+    public function getPermissions(): JsonResponse
     {
+        $user = new User();
         if ($this->isGranted('ROLE_ADMIN')) {
             // L'utilisateur a le rôle ADMIN
             return new JsonResponse([
