@@ -7,3 +7,7 @@
 ### docker exec -it "conteneur-symfony" bash
 
 ### php bon/console doctrine:migrations:migrate
+
+### symfony serve (en dehors du conteneur)
+
+### http://localhost:8000/reservation, http://localhost:8000/user
